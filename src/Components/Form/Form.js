@@ -50,12 +50,21 @@ function Form() {
     );
   }
 
+  const onCancelHandler = () => {
+    dispatch(
+      setUpdateItemForm(false)
+    );
+
+    text.current.value = '';
+    number.current.value = '';
+  }
+
   return (
     <form onSubmit={ onSubmitHandler }>
       <input type="text" ref={ text }></input>
       <input type="number" ref={ number }></input>
       <input type="submit" value='save'></input>
-      { updateItemForm ? <button className='cancel'>{'cancel'}</button> : null }
+      { updateItemForm ? <button className='cancel' onClick={ onCancelHandler }>{'cancel'}</button> : null }
     </form>
   )
 }
