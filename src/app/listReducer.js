@@ -1,12 +1,19 @@
+import { createSlice } from "@reduxjs/toolkit";
+
 const initialState = {
   list: [],
 }
 
-export default function listReducer(state = initialState, action) {
-  switch (action.type) {
-    case 'list/add': {
-      return {...state, list: action.payload()}
-    }
-    default: return state;
-  }
-} 
+const listReducer = createSlice({
+  name: 'list',
+  initialState,
+  reducers: {
+    addItem(state, action) {
+      state.list.push(action.payload);
+    },
+  },
+});
+
+export const { addItem } = listReducer.actions;
+
+export default listReducer.reducer;

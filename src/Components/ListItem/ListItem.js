@@ -1,10 +1,12 @@
+import './ListItem.css';
+
 function ListItem({ data }) {
   return (
     <li>
-      <div className="name"></div>
-      <div className="sum"></div>
-      <button className="update"></button>
-      <button className="delete"></button>
+      <div className="name">{ data.text }</div>
+      <div className="sum">{ data.number }</div>
+      <button className="update">Update</button>
+      <button className="delete">Delete</button>
     </li>
   )
 }

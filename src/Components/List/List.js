@@ -8,7 +8,7 @@ function List() {
 
   return (
     <ul>
-      { items.map(item => <ListItem data={item} />) }
+      { items.map(item => <ListItem data={ item } key={ item.id } />) }
     </ul>
   )
 }
