@@ -1,16 +1,17 @@
 import { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
+
 import './Form.css'
-import { addItem, setUpdateItemForm, updateItem } from '../../redux/listReducer';
+import { addItem, setUpdateItemForm, updateItem } from '../../redux/reducer';
 
 function Form() {
   const text = useRef();
   const number = useRef();
 
-  const defaultFormValues = useSelector(state => state.listMaker.defaultFormValues);
-  const updateItemForm = useSelector(state => state.listMaker.updateItemForm);
-  const selectedItemId = useSelector(state => state.listMaker.selectedItemId);
+  const defaultFormValues = useSelector(state => state.store.defaultFormValues);
+  const updateItemForm = useSelector(state => state.store.updateItemForm);
+  const selectedItemId = useSelector(state => state.store.selectedItemId);
   
   useEffect(() => {
     text.current.value = defaultFormValues.text;

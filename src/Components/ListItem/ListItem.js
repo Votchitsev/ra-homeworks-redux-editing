@@ -1,6 +1,7 @@
-import './ListItem.css';
 import { useDispatch } from 'react-redux';
-import { deleteItem, setDefaultFormValues, setSelectedItemId, setUpdateItemForm } from '../../redux/listReducer';
+
+import { deleteItem, setDefaultFormValues, setSelectedItemId, setUpdateItemForm } from '../../redux/reducer';
+import './ListItem.css';
 
 function ListItem({ data }) {
 

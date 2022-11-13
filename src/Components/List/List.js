@@ -1,10 +1,10 @@
-import './List.css';
-import ListItem from '../ListItem/ListItem';
 import { useSelector } from 'react-redux';
+
+import ListItem from '../ListItem/ListItem';
 
 function List() {
 
-  const items = useSelector(state => state.listMaker.list);
+  const items = useSelector(state => state.store.list);
 
   return (
     <ul>
