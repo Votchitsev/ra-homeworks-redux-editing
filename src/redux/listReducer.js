@@ -11,9 +11,12 @@ const listReducer = createSlice({
     addItem(state, action) {
       state.list.push(action.payload);
     },
+    deleteItem(state, action) {
+      state.list.splice(state.list.indexOf(state.list.find(item => item.id === action.payload.id), 1));
+    }
   },
 });
 
-export const { addItem } = listReducer.actions;
+export const { addItem, deleteItem } = listReducer.actions;
 
 export default listReducer.reducer;

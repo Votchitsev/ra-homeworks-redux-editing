@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import './Form.css'
-import { addItem } from '../../app/listReducer';
+import { addItem } from '../../redux/listReducer';
 
 function Form() {
   const text = useRef();
