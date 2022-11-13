@@ -1,6 +1,6 @@
 import './ListItem.css';
 import { useDispatch } from 'react-redux';
-import { deleteItem } from '../../redux/listReducer';
+import { deleteItem, setDefaultFormValues, setSelectedItemId, setUpdateItemForm } from '../../redux/listReducer';
 
 function ListItem({ data }) {
 
@@ -14,11 +14,28 @@ function ListItem({ data }) {
     );
   }
 
+  const onUpdateHandler = () => {
+    dispatch(
+      setDefaultFormValues({
+        text: data.text,
+        number: data.number,
+      })
+    );
+
+    dispatch(
+      setUpdateItemForm(true)
+    );
+
+    dispatch(
+      setSelectedItemId(data.id)
+    );
+  }
+
   return (
     <li>
       <div className="name">{ data.text }</div>
       <div className="sum">{ data.number }</div>
-      <button className="update">Update</button>
+      <button className="update" onClick={ onUpdateHandler }>Update</button>
       <button className="delete" onClick={ onDeleteHandler }>Delete</button>
     </li>
   )
