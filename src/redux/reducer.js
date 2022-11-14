@@ -8,6 +8,7 @@ const initialState = {
   },
   updateItemForm: false,
   selectedItemId: null,
+  searchValue: null,
 }
 
 const reducer = createSlice({
@@ -40,6 +41,9 @@ const reducer = createSlice({
     },
     setSelectedItemId(state, action) {
       state.selectedItemId = action.payload;
+    },
+    setSearchValue(state, action) {
+      state.searchValue = action.payload;
     }
   },
 });
@@ -51,6 +55,7 @@ export const {
   setUpdateItemForm,
   setSelectedItemId,
   updateItem,
+  setSearchValue,
 } = reducer.actions;
 
 export default reducer.reducer;
